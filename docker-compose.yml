@@ -1,0 +1,35 @@
+version: '3.8'
+services:
+  # Contenedor de la aplicación PHP
+  app:
+    build: .
+    ports:
+      - "80:80"
+    environment:
+      - DB_HOST=db
+      - DB_PORT=3306
+      - DB_NAME=registros_db
+      - DB_USER=root
+      - DB_PASSWORD=Holasoy123.
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # Contenedor de la base de datos MySQL
+  db:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: Holasoy123.
+      MYSQL_DATABASE: registros_db
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - app-network
+
+volumes:
+  db_data:
+
+networks:
+  app-network:
+    driver: bridge
