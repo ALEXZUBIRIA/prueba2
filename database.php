@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';
-$dbname = 'registros_db';
-$username = 'root'; // Cambia si tu usuario es diferente
-$password = 'Holasoy123.';     // Cambia si tienes una contraseña
+$host = getenv('DB_HOST'); // Lee el valor de la variable de entorno 'DB_HOST'
+$dbname = getenv('DB_NAME'); // Lee el valor de la variable de entorno 'DB_NAME'
+$username = getenv('DB_USER'); // Lee el valor de la variable de entorno 'DB_USER'
+$password = getenv('DB_PASSWORD'); // Lee el valor de la variable de entorno 'DB_PASSWORD'
 
 try {
     $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -10,4 +10,5 @@ try {
 } catch (PDOException $e) {
     die("Error en la conexión: " . $e->getMessage());
 }
+
 ?>
