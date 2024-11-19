@@ -6,11 +6,11 @@ services:
     ports:
       - "80:80"
     environment:
-      - DB_HOST=db
+      - DB_HOST=mysql.railway.internal
       - DB_PORT=3306
-      - DB_NAME=registros_db
+      - DB_NAME=railway
       - DB_USER=root
-      - DB_PASSWORD=Holasoy123.
+      - DB_PASSWORD=pfbhjMkNuneMHaLVEyzVrKrNCGqAwmZL
     depends_on:
       - db
     networks:
@@ -20,8 +20,8 @@ services:
   db:
     image: mysql:8.0
     environment:
-      MYSQL_ROOT_PASSWORD: Holasoy123.
-      MYSQL_DATABASE: registros_db
+      MYSQL_ROOT_PASSWORD: pfbhjMkNuneMHaLVEyzVrKrNCGqAwmZL.
+      MYSQL_DATABASE: railway
     volumes:
       - db_data:/var/lib/mysql
     networks:
