@@ -87,3 +87,12 @@ require 'process.php';
         function showEditForm(id, name, description) {
             document.getElementById('editForm').style.display = 'block';
             document.getElementById('editId').value = id;
+            document.getElementById('editName').value = name;
+            document.getElementById('editDescription').value = description;
+        }
+        function hideEditForm() {
+            document.getElementById('editForm').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
