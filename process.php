@@ -15,22 +15,6 @@ if (isset($_POST['action']) && $_POST['action'] === 'add') {
     exit;
 }
 
-// Editar un registro
-if (isset($_POST['action']) && $_POST['action'] === 'edit') {
-    $id = $_POST['id'];
-    $name = $_POST['name'];
-    $description = $_POST['description'];
-
-    $stmt = $conn->prepare("UPDATE records SET name = :name, description = :description WHERE id = :id");
-    $stmt->bindParam(':id', $id);
-    $stmt->bindParam(':name', $name);
-    $stmt->bindParam(':description', $description);
-    $stmt->execute();
-
-    header("Location: index.php");
-    exit;
-}
-
 // Eliminar un registro
 if (isset($_GET['action']) && $_GET['action'] === 'delete') {
     $id = $_GET['id'];
