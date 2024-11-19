@@ -33,22 +33,29 @@ require 'process.php';
             <button type="submit" class="btn btn-success">Agregar</button>
         </form>
     </div>
-    <form id="editForm" method="post" action="process.php" style="display: none;" class="card p-4 mb-4">
-        <input type="hidden" name="action" value="edit">
-        <input type="hidden" name="id" id="editId">
-        <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
-            <label for="editName" class="form-label">Nombre</label>
-            <input type="text" name="name" id="editName" class="form-control" placeholder="Nombre" required>
-        </div>
-        <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
-            <label for="editDescription" class="form-label">Descripción</label>
-            <textarea name="description" id="editDescription" class="form-control" placeholder="Descripción" required></textarea>
-        </div>
-        <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
-            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
-            <button type="button" class="btn btn-secondary" onclick="hideEditForm()">Cancelar</button>
-        </div>
-    </form>
+    <form action="process.php" method="POST">
+    <!-- Campo oculto para la acción -->
+    <input type="hidden" name="action" value="edit">
+    
+    <!-- Campo oculto para el ID del registro -->
+    <input type="hidden" name="id" value="<?php echo $record['id']; ?>">  <!-- Asumiendo que estás editando el registro con el ID correspondiente -->
+
+    <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
+        <label for="editName" class="form-label">Nombre</label>
+        <input type="text" name="name" id="editName" class="form-control" value="<?php echo $record['name']; ?>" placeholder="Nombre" required>
+    </div>
+
+    <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
+        <label for="editDescription" class="form-label">Descripción</label>
+        <textarea name="description" id="editDescription" class="form-control" placeholder="Descripción" required><?php echo $record['description']; ?></textarea>
+    </div>
+
+    <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        <button type="button" class="btn btn-secondary" onclick="hideEditForm()">Cancelar</button>
+    </div>
+</form>
+
     <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
         <table class="table table-striped table-bordered">
             <thead class="table-dark">
