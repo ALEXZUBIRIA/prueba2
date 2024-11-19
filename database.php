@@ -5,10 +5,9 @@ $username = getenv('DB_USER'); // Lee el valor de la variable de entorno 'DB_USE
 $password = getenv('DB_PASSWORD'); // Lee el valor de la variable de entorno 'DB_PASSWORD'
 
 try {
-    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $conn = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8mb4", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 } catch (PDOException $e) {
     die("Error en la conexión: " . $e->getMessage());
 }
-
 ?>
