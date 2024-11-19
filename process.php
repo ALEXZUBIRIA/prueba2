@@ -38,4 +38,5 @@ if (isset($_GET['search'])) {
 }
 $stmt->execute();
 $records = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
 ?>
