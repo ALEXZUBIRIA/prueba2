@@ -137,6 +137,8 @@ require 'process.php';
             <li>HECTOR ALEJANDRO ZUBIRIA PEREZ</li>
             <li>222959514</li>
             <li>Awexzubiria@gmail.com</li>
+            <li>PI. Aplicación web dinámica en un servicio de la nube
+</li>
         </ul>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
