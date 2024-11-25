@@ -10,7 +10,7 @@ require 'process.php';
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">    
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body>    <h1 class="text-center mb-4">plataformas de servicios en la nube</h1>
     <h1 class="text-center mb-4">Gestión de Registros</h1>
     <div class="container p-3 mb-2 bg-danger text-white bg-gradient">
         <form method="get" action="index.php" class="d-flex mb-4">
